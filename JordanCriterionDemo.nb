@@ -1,0 +1,40 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+Notebook[{
+Cell["Jordan elements in a free associative algebra", "Title"],
+Cell["Verified demo for the polynomial criterion of F. A. Mashurov and B. K. Sartayev", "Subtitle"],
+Cell["This notebook is a small interactive companion. The version-controlled source is JordanCriterion.wl in the same directory. Start with a fresh kernel, then evaluate the notebook from top to bottom.", "Text"],
+
+Cell["Load the implementation", "Section"],
+Cell["Get[FileNameJoin[{NotebookDirectory[], \"JordanCriterion.wl\"}]];", "Input"],
+
+Cell["Regression test", "Section"],
+Cell["JordanSelfTest[]", "Input"],
+Cell["The test should finish with ALL TESTS PASSED and return True.", "Text"],
+
+Cell["Degree 3", "Section"],
+Cell["r3 = JordanReport[\n  3,\n  \"123 + 321\",\n  ShowMatrix -> False,\n  ComputeQ -> True\n];", "Input"],
+Cell["Expected: dim V_3 = 6, e_3 = 3, dim(J intersect V_3) = 3, deg p_3 = 2, deg q_3 = 3, and the sample is Jordan.", "Text"],
+
+Cell["Degree 4", "Section"],
+Cell["r4 = JordanReport[\n  4,\n  \"1234 + 4321 + 1243 + 3421\",\n  ShowMatrix -> False,\n  ComputeQ -> True\n];", "Input"],
+Cell["Expected: dim V_4 = 24, e_4 = 13, dim(J intersect V_4) = 11, deg p_4 = 5, deg q_4 = 11, and the sample is Jordan.", "Text"],
+
+Cell["Degree 5", "Section"],
+Cell["r5 = JordanReport[\n  5,\n  \"12345 + 54321\",\n  ShowMatrix -> False,\n  ComputeQ -> True\n];", "Input"],
+Cell["Expected: dim V_5 = 120, e_5 = 65, dim(J intersect V_5) = 55, deg p_5 = 12, deg q_5 = 55, and this reverse-pair sample is not Jordan.", "Text"],
+
+Cell["Enter your own polynomial", "Section"],
+Cell["f = \"3*12345 - 2*21534 + 7/5*54321\";\nJordanElementQ[5, f]", "Input"],
+Cell["Use exact rational coefficients such as 7/5 rather than decimal approximations. For degree 10 and above, use list word labels, for example w[{1,2,3,4,5,6,7,8,9,10}].", "Text"],
+
+Cell["Useful returned data", "Section"],
+Cell["Keys[r5]\nr5[\"p\"]\nr5[\"dimensions\"]\nr5[\"JordanQ\"]", "Input"]
+},
+WindowSize->{1000, 780},
+StyleDefinitions->"Default.nb"
+]
+
