@@ -161,34 +161,3 @@ MaxTerms -> 24
 ComputeQ -> Automatic
 ShowJordanExpression -> False
 ~~~
-
-The older string option names, such as "ShowMatrix" -> False, remain accepted
-for compatibility. New code should use the symbol form shown above.
-
-The returned Association stores the full vectors even when long printed
-expressions are suppressed.
-
-## Uploading to GitHub
-
-### GitHub website
-
-1. Create or open the repository.
-2. Choose **Add file > Upload files**.
-3. Upload JordanCriterion.wl, JordanCriterionDemo.nb, and README.md.
-4. Use a commit message such as: Add verified Mathematica Jordan criterion.
-5. After the repository URL is stable, replace the [?] implementation
-   placeholder in the paper with a link to the repository or to
-   JordanCriterion.wl.
-
-### Command line
-
-From the repository directory:
-
-~~~bash
-git add JordanCriterion.wl JordanCriterionDemo.nb README.md
-git commit -m "Add verified Mathematica Jordan criterion"
-git push
-~~~
-
-Before every release, run JordanSelfTest[] in a fresh Mathematica kernel and
-confirm that it ends with ALL TESTS PASSED.
